@@ -57,10 +57,10 @@ we need
 ## First question in this project is Who are the most popular article authors of all time?
   #### -I created view named viewauthor
   ##### query:
-   create view viewauthor as select name,count(*) as views from articles,authors,log where articles.author=authors.id and log.path like concat('%',articles.slug) group by name order by views desc;
+    create view viewauthor as select name,count(*) as views from articles,authors,log where articles.author=authors.id and log.path like concat('%',articles.slug) group by name order by views desc;
 ## First question in this project is On which days did more than 1% of requests lead to errors?
 #### I created three views as follows
-  create view firstview as select count(status) as count1, date(TIME) as date from log where status!='200 OK' group by date order by count1 desc;
+    create view firstview as select count(status) as count1, date(TIME) as date from log where status!='200 OK' group by date order by count1 desc;
   ######create view secondview as select count(status) as count2,date(TIME) as date from log group by date order by count desc;
   ######create view finalview as select firstview.date as date,((100.00*count1)/count2) as perc from firstview natural join secondview  where firstview.date=secondview.date group by firstview.date,perc order by perc desc;
 #### For running all these queries we need to create python program and I created project.py as my python file
