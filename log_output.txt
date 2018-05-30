@@ -1,0 +1,26 @@
+﻿
+1. What are the most popular three articles of all time?
+
+select title,views from noofviews limit 3;
+              title               | views
+----------------------------------+--------
+ Candidate is jerk, alleges rival | 338647
+ Bears love berries, alleges bear | 253801
+ Bad things gone, say good people | 170098
+(3 rows)
+2. Who are the most popular article authors of all time?
+
+select name,views from viewauthor;
+          name          | views
+------------------------+--------
+ Ursula La Multa        | 507594
+ Rudolf von Treppenwitz | 423457
+ Anonymous Contributor  | 170098
+ Markoff Chaney         |  84557
+(4 rows)
+3. On which days did more than 1% of requests lead to errors?
+
+select * from finalview where perc>1;
+    date    |        perc
+------------+--------------------
+ 2016-07-17 | 2.2626862468027260
