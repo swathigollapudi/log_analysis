@@ -74,5 +74,3 @@ In this firstly,
 # To run:
 -In vagrant path run command
 **python project.py
-
-  
