@@ -71,7 +71,7 @@ In this firstly,
 -Create cursor object
 -Then after creating and select queries I fetched the data with this cur object
 -Then close connections
-#To run:
+# To run:
 -In vagrant path run command
 **python project.py
 
