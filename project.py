@@ -1,3 +1,4 @@
+#!/usr/bin/env python 
 import psycopg2
 try:
     conn = psycopg2.connect("dbname='news' user='vagrant' password='vagrant'")
@@ -10,17 +11,26 @@ try:
 except:
     print("i can't select from noofviews")
 c = cur.fetchall()
-print(c)
+i=0
+while i<len(c):
+    print ('\t' + str(c[i]) +' views')
+    i=i+1
 try:
     cur.execute("select name,views from viewauthor")
 except:
     print("cannot select")
 d = cur.fetchall()
-print(d)
+i=0
+while i<len(d):
+    print('\t'+ str(d[i]) + 'views')
+    i=i+1
 try:
     cur.execute("select * from finalview where perc>1;")
 except:
     print("cannot connect")
 e = cur.fetchall()
-print(e)
+i=0
+while i<len(e):
+    print('\t'+str(e[i]) + 'errors')
+    i=i+1
 cur.close()
